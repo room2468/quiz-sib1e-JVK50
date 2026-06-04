@@ -30,9 +30,15 @@ read -r used_mb
 #   echo "Status: $status"
 
 # TODO: Replace this line with your implementation
-total_kb=$(grep "^MemTotal:" /proc/meminfo | awk '{print $2}')
-available_kb=$(grep "^MemAvailable:" /proc/meminfo | awk '{print $2}')
-used_kb=$(( total_kb - available_kb ))
-
-echo $(( total_kb / 1024 ))
-echo $(( used_kb / 1024 ))
+free_mb=$(( total_mb - used_mb ))
+usage=$(( used_mb * 100 / total_mb ))
+if (( usage >= 90 )); then
+         status="Critical"
+     elif (( usage >= 70 )); then
+         status="Warning"
+     else
+         status="Normal"
+     fi
+echo "Free: $free_mb MB"
+echo "Usage: $usage%"
+echo "Status: $status"
