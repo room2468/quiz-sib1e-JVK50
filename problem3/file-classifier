@@ -38,11 +38,20 @@ while IFS= read -r dir; do
 
     # TODO: Replace this line with your case statement
     case "$dir" in
-        *.sh)   (( scripts++ )) ;;
-        *.log)  (( logs++ )) ;;
-        *.conf) (( configs++ )) ;;
-        *)      (( others++ )) ;;
-    esac
+             *.sh)
+                 (( scripts++ ))
+                 ;;
+             *.log)
+                 (( logs++ ))
+                 ;;
+             *.conf)
+                 (( configs++ ))
+                 ;;
+             *)
+                 (( others++ ))
+                 ;;
+         esac
+
 done
      
 echo "Scripts (.sh): $scripts"
