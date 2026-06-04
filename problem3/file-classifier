@@ -53,7 +53,6 @@ while IFS= read -r filename; do
          esac
 
 done
-     
 echo "Scripts (.sh): $scripts"
 echo "Logs (.log): $logs"
 echo "Configs (.conf): $configs"
