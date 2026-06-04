@@ -1,7 +1,7 @@
 #!/bin/env bash
 
 # HINT: You can test the result of this script using the following command:
-# printf "alice 1200\nbob 450\ncharlie 2800\n" | ./disk-reporter
+# printf "alice 1200\nbob 450\ncharlie 2800\ndave 900\n" | ./disk-reporter
 
 # Each input line has: username size_MB (separated by a space)
 
